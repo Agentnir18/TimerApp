@@ -1,3 +1,6 @@
+# TimerApp
+A simple timer app with warning alarm for when time is running out
+
 # neutralinojs-minimal
 
 The default template for a Neutralinojs app. It's possible to use your favorite frontend framework by using [these steps](https://neutralino.js.org/docs/getting-started/using-frontend-libraries).
