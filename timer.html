@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ring Timer</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="tabs-container">
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="timerTab">Timer</button>
+            <button class="tab-button" id="settingsTabBtn" data-tab="settingsTab">Settings</button>
+        </nav>
+
+        <section id="timerTab" class="tab-content active">
+            <div id="ringWrapper" class="ring-wrapper">
+                <svg min-width="240" min-height="240" viewBox="0 0 240 240">
+                    <circle class="background" cx="120" cy="120" r="100" stroke="#eee" stroke-width="15" fill="none" />
+                    <circle class="progress" cx="120" cy="120" r="100" stroke="green" stroke-width="15" fill="none"
+                        stroke-linecap="round" />
+                </svg>
+                <div id="timer-text" class="timer-text">00:00</div>
+            </div>
+
+            <div class="buttons">
+                <button id="startPauseBtn" class="btn">▶ Start</button>
+                <button id="resetBtn" class="btn">Reset</button>
+            </div>
+        </section>
+
+        <section id="settingsTab" class="tab-content">
+            <form id="settingsForm" class="settings-form">
+                <div class="time-setting">
+                    <label>Total Time:</label>
+                    <div class="time-inputs">
+                        <input type="number" id="totalMinutes" min="0" step="1" value="1" required /> min
+                        <input type="number" id="totalSeconds" min="0" max="59" step="1" value="0" required /> sec
+                    </div>
+                </div>
+
+                <div class="time-setting">
+                    <label>Warning Time Left:</label>
+                    <div class="time-inputs">
+                        <input type="number" id="warningMinutes" min="0" step="1" value="0" required /> min
+                        <input type="number" id="warningSeconds" min="0" max="59" step="1" value="0" required /> sec
+                    </div>
+                </div>
+
+
+                <button type="submit" class="btn apply-btn">Apply</button>
+            </form>
+        </section>
+    </div>
+    <audio id="beepSound" src="beep-07a.mp3" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+
+</html>
